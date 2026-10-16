@@ -1,5 +1,5 @@
-datasets/
-outputs/
+/datasets/
+/outputs/
 __pycache__/
 *.egg-info/
 # 许可证未确认，不公开分发（获取方式见 README）
