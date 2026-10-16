@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "piper_act"
+version = "0.1.0"
+description = "PiPER X + ACT 各任务共享库：真机封装、相机、通用常量"
+requires-python = ">=3.10"
+dependencies = [
+    "lerobot[phone]==0.4.4", # 源码在 third_party/lerobot，先 pip install -e "third_party/lerobot[phone]"（phone = iPhone 遥操作依赖 hebi-py 等）
+    "mujoco>=3.5",           # 仿真（已验证 3.15.0）
+    "python-can>=4.0",
+    "opencv-python",
+    "pyAgxArm==1.0.0",       # 真机 SDK（CAN），源码在 third_party/pyAgxArm，先 pip install -e third_party/pyAgxArm
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

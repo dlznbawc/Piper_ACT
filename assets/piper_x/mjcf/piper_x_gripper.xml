@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!-- 由官方 URDF（agilexrobotics/agx_arm_urdf，MIT）自动转换生成；改模型请从上游 URDF 重新转换，勿手改 -->
+<mujoco model="piper_x">
+  <compiler angle="radian" meshdir="../meshes"/>
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic" impratio="10"/>
+
+  <default>
+    <default class="arm">
+      <joint frictionloss="0.3" armature="0.005" damping="0.5"/>
+      <geom type="mesh" density="0"/>
+      <default class="vis">
+        <geom group="2" contype="0" conaffinity="0"/>
+      </default>
+      <default class="col">
+        <geom group="3" type="mesh" rgba="0.8 0.8 0.8 0"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <mesh name="base_link_stl" file="base_link.stl"/>
+    <mesh name="link1_stl" file="link1.stl"/>
+    <mesh name="link2_stl" file="link2.stl"/>
+    <mesh name="link3_stl" file="link3.stl"/>
+    <mesh name="link4_stl" file="link4.stl"/>
+    <mesh name="link5_stl" file="link5.stl"/>
+    <mesh name="link6_stl" file="link6.stl"/>
+    <mesh name="gripper_base_stl" file="gripper_base.stl"/>
+    <mesh name="gripper_link1_stl" file="gripper_link1.stl"/>
+    <mesh name="gripper_link2_stl" file="gripper_link2.stl"/>
+  </asset>
+
+  <worldbody>
+    <light name="light0" pos="0.3 0.4 1.5"/>
+    <geom name="floor" type="plane" size="2 2 0.1" rgba="0.85 0.87 0.9 1"/>
+  <body name="base_link" pos="0 0 0" quat="1 0 0 0">
+        <inertial pos="-0.004736411642 2.568291346e-05 0.04145151804" mass="1.02" fullinertia="0.00267433 0.00282612 0.00089624 -0.00000073 -0.00017389 0.0000004"/>
+        <geom class="vis" mesh="base_link_stl" pos="0 0 0"/>
+        <geom class="col" mesh="base_link_stl" pos="0 0 0"/>
+        <body name="link1" pos="0 0 0.123" quat="2.679489659e-08 0 0 1">
+          <joint name="joint1" type="hinge" axis="0 0 1" range="-2.6179938 2.6179938"/>
+              <inertial pos="0.00053 -0.00039 -0.00315" mass="0.71" fullinertia="0.00050027 0.00040879 0.00045802 0.00000078 0.00000626 0.00000462"/>
+              <geom class="vis" mesh="link1_stl" pos="0 0 0"/>
+              <geom class="col" mesh="link1_stl" pos="0 0 0"/>
+              <body name="link2" pos="0 0 0" quat="-0.7054776907 -0.7054777121 0.04797093868 -0.04797097777">
+                <joint name="joint2" type="hinge" axis="0 0 1" range="0 3.1415926"/>
+                    <inertial pos="0.21856 -0.00859 0.00227" mass="1.16" fullinertia="0.00111915 0.06763251 0.067559 0.00182916 0.00019233 0.00000767"/>
+                    <geom class="vis" mesh="link2_stl" pos="0 0 0"/>
+                    <geom class="col" mesh="link2_stl" pos="0 0 0"/>
+                    <body name="link3" pos="0.28503 0 0" quat="0.1511746051 0 0 0.9885070757">
+                      <joint name="joint3" type="hinge" axis="0 0 1" range="-2.9670597 0"/>
+                          <inertial pos="0.2014 -0.00418 -0.00141" mass="0.67" fullinertia="0.00033471 0.03360411 0.03356941 0.00026891 0.00013918 0.00000052"/>
+                          <geom class="vis" mesh="link3_stl" pos="0 0 0"/>
+                          <geom class="col" mesh="link3_stl" pos="0 0 0"/>
+                          <body name="link4" pos="0.27364 0 0" quat="0.9991873758 0 0 0.04030617852">
+                            <joint name="joint4" type="hinge" axis="0 0 1" range="-1.553343 1.553343"/>
+                                <inertial pos="0.059 -0.05831 0.002" mass="0.39" fullinertia="0.00120173 0.00209324 0.00307814 0.00138165 0.00001187 0.00000217"/>
+                                <geom class="vis" mesh="link4_stl" pos="0 0 0"/>
+                                <geom class="col" mesh="link4_stl" pos="0 0 0"/>
+                                <body name="link5" pos="0.07466 0 0" quat="0.5000000134 -0.5 0.5 0.4999999866">
+                                  <joint name="joint5" type="hinge" axis="0 0 1" range="-1.553343 1.553343"/>
+                                      <inertial pos="5e-05 -0.01282 -0.00429" mass="0.35" fullinertia="0.00022660 0.00017740 0.00019425 0.00000019 0.00000005 0.00000085"/>
+                                      <geom class="vis" mesh="link5_stl" pos="0 0 0"/>
+                                      <geom class="col" mesh="link5_stl" pos="0 0 0"/>
+                                      <body name="link6" pos="0 -0.035 0" quat="0.7071067907 0.7071067717 0 0">
+                                        <joint name="joint6" type="hinge" axis="0 0 1" range="-2.0943951 2.0943951"/>
+                                            <inertial pos="0 0 -0.0035" mass="0.007" fullinertia="0.00152112 0.00138626 0.00031152 0.00000202 0.00000261 0.00000002"/>
+                                            <geom class="vis" mesh="link6_stl" pos="0 0 0"/>
+                                            <geom class="col" mesh="link6_stl" pos="0 0 0"/>
+                                            <body name="gripper_base" pos="0 0 0" quat="0.7071067907 0 0 0.7071067717">
+                                                  <inertial pos="-0.0001838071622 8.050331556e-05 0.03214366899" mass="0.45" fullinertia="0.00092934 0.00071447 0.00039442 0.00000034 -0.00000738 0.00000005"/>
+                                                  <geom class="vis" mesh="gripper_base_stl" pos="0 0 0"/>
+                                                  <geom class="col" mesh="gripper_base_stl" pos="0 0 0"/>
+                                                  <body name="gripper_link1" pos="0 0 0.1358" quat="0.7071067907 0.7071067717 0 0">
+                                                    <joint name="gripper_joint1" type="slide" axis="0 0 1" range="0 0.05"/>
+                                                        <inertial pos="0.0006512318504 -0.04919298691 0.009722587692" mass="0.025" fullinertia="0.00007371 0.00000781 0.0000747 -0.00000113 0.00000021 -0.00001372"/>
+                                                        <geom class="vis" mesh="gripper_link1_stl" pos="0 0 0"/>
+                                                        <geom class="col" mesh="gripper_link1_stl" pos="0 0 0"/>
+                                                  </body>
+                                                  <body name="gripper_link2" pos="0 0 0.1358" quat="1.894685333e-08 1.894685282e-08 -0.7071067717 -0.7071067907">
+                                                    <joint name="gripper_joint2" type="slide" axis="0 0 -1" range="-0.05 0"/>
+                                                        <inertial pos="0.0006512318504 -0.04919298691 0.009722587692" mass="0.025" fullinertia="0.00007371 0.00000781 0.0000747 -0.00000113 0.00000021 -0.00001372"/>
+                                                        <geom class="vis" mesh="gripper_link2_stl" pos="0 0 0"/>
+                                                        <geom class="col" mesh="gripper_link2_stl" pos="0 0 0"/>
+                                                  </body>
+                                                    <body name="tcp_body" pos="0 0 0.1358">
+          <site name="tcp" size="0.008" rgba="0 1 0 0.6"/>
+        </body>
+</body>
+                                      </body>
+                                </body>
+                          </body>
+                    </body>
+              </body>
+        </body>
+  </body>
+  </worldbody>
+
+  <contact>
+    <!-- base_link 固定在世界上，MuJoCo 的父子碰撞过滤对它不生效；不排除的话两者网格相互接触会卡死 J1 -->
+    <exclude body1="base_link" body2="link1"/>
+  </contact>
+
+  <actuator>
+    <position class="arm" joint="joint1" kp="400.0" kv="40.0" forcelimited="true" forcerange="-150.0 150.0" ctrlrange="-2.6179938 2.6179938"/>
+    <position class="arm" joint="joint2" kp="400.0" kv="40.0" forcelimited="true" forcerange="-150.0 150.0" ctrlrange="0 3.1415926"/>
+    <position class="arm" joint="joint3" kp="400.0" kv="40.0" forcelimited="true" forcerange="-150.0 150.0" ctrlrange="-2.9670597 0"/>
+    <position class="arm" joint="joint4" kp="400.0" kv="40.0" forcelimited="true" forcerange="-150.0 150.0" ctrlrange="-1.553343 1.553343"/>
+    <position class="arm" joint="joint5" kp="400.0" kv="40.0" forcelimited="true" forcerange="-150.0 150.0" ctrlrange="-1.553343 1.553343"/>
+    <position class="arm" joint="joint6" kp="400.0" kv="40.0" forcelimited="true" forcerange="-150.0 150.0" ctrlrange="-2.0943951 2.0943951"/>
+    <position joint="gripper_joint1" kp="1000.0" kv="4.0" forcelimited="true" forcerange="-20.0 20.0" ctrlrange="0 0.05"/>
+    <position joint="gripper_joint2" kp="1000.0" kv="4.0" forcelimited="true" forcerange="-20.0 20.0" ctrlrange="-0.05 0"/>
+  </actuator>
+</mujoco>

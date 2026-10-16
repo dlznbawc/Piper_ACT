@@ -1,0 +1,4 @@
+hebi-py 2.11.0（HEBI Robotics，电脑与 iPhone HEBI Mobile I/O App 通信）
+来源：https://pypi.org/project/hebi-py/2.11.0/   （包内未声明许可证，公开分发前向 HEBI 确认）
+sha256：51d27ed8c94897dcfc9d49965b6d79e60b70adf244bff50538704c6cdb1ec06a
+安装：pip install third_party/hebi-py/hebi_py-2.11.0.tar.gz
